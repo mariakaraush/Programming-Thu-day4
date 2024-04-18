@@ -13,14 +13,40 @@
 // console.log(person[2])
 
 
-let examResults = {
-    steve: [99, 98, 95],
-    violet: [56, 53, 88],
-    aqil: [100, 100, 100]
-}
+// let examResults = {
+//     steve: [99, 98, 95],
+//     violet: [56, 53, 88],
+//     aqil: [100, 100, 100],
+// }
 
-constant.log(examResults.steve)
-// constant.log(examResults.steve[0])
-// constant.log(examResults.steve.length)
-// constant.log(examResults.steve.includes(98))
-// constant.log(examResults.steve.includes("hello"))
+// console.log(examResults.steve)
+// console.log(examResults.steve[0])
+// console.log(examResults.steve.length)
+// console.log(examResults.steve.includes(98))
+// console.log(examResults.steve.includes("hello"))
+
+// const dog = {
+//     dogName : "Spot",
+//     dogBreed : "Jack Russel",
+//     dogAge : 4,
+//     coatColour : ["Brown", "White"],
+//     barkType : "Yap",
+//     dogBark: function() {
+//         return `${this.barkType} ${this.barkType} !`;
+//     }
+// };
+
+// console.log(dog.dogBark());
+
+let library = [
+    {
+    title: "Dragonflight",
+    author: "Anne Mccaffrey",
+    checkedOut: true
+},
+{
+    title: "Hyperion",
+    author: "Dan Simmons",
+    checkedOut: false
+}
+]
