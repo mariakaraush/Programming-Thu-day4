@@ -59,14 +59,14 @@ let library = [
 }
 ];
 
-for (let i = 0; i < library.length; i++) {
-    let book = `'${library[i].title}' by '${library[i].author}';`;
-    if (library[i].checkedOut) {
-        console.log("Out on loan: " + book);
-    } else {
-        console.log("On the shelf: " + book);
-    }
-}
+// for (let i = 0; i < library.length; i++) {
+//     let book = `'${library[i].title}' by '${library[i].author}';`;
+//     if (library[i].checkedOut) {
+//         console.log("Out on loan: " + book);
+//     } else {
+//         console.log("On the shelf: " + book);
+//     }
+// }
 
 
 function searchBook(arr, title) {
@@ -94,24 +94,47 @@ function booksAvailability(arr) {
 Number of Unavailable books: ${countUnavailable}`
 }
 
-function changeAvailability(arr, title, status) {
+function changeAvailability(arr, title) {
 
     for (let i = 0; i < arr.length; i++) {
         if (title == arr[i].title) {
-            if (status == true) {
-                arr[i].status = false
+            if (arr[i].checkedOut == true) {
+                arr[i].checkedOut = false
+                console.log(arr[i])
             } else {
-                arr[i].status = true
+                arr[i].checkedOut = true
+                console.log(arr[i])
         }    
      }      
     }
     
 }
 
-let userTitle = readline.question("Please enter the title of the book you are serching for: ")
+// let userTitle = readline.question("Please enter the title of the book you are serching for: ")
 
-console.log(searchBook(library, userTitle))
-console.log(booksAvailability(library))
-console.log(changeAvailability(library, "Hyperion", true))
+// console.log(searchBook(library, userTitle))
+// console.log(booksAvailability(library))
+// console.log(changeAvailability(library, "Hyperion"))
 
 
+
+const validWholeNumberRegEx = /^[0-9]+$/;
+console.log(validWholeNumberRegEx.test(456))
+console.log(validWholeNumberRegEx.test("4"))
+console.log(validWholeNumberRegEx.test(4.4))
+console.log(validWholeNumberRegEx.test("error"))
+
+function validInput(input) {
+    const aToZandSpaceregex = /^[A-Za-z]+$/
+    return aToZandSpaceregex.test(input)
+}
+
+while (true) {
+    userInput = readline.question("Please enter alpha chars only: ")
+    if (validInput(userInput)) {
+        console.log("Thank you. Please continue.")
+        break;
+    } else {
+        console.log("Incorrect input")
+    }
+}
