@@ -38,6 +38,9 @@
 
 // console.log(dog.dogBark());
 
+let readline = require("readline-sync")
+
+
 let library = [
     {
     title: "Dragonflight",
@@ -64,5 +67,51 @@ for (let i = 0; i < library.length; i++) {
         console.log("On the shelf: " + book);
     }
 }
+
+
+function searchBook(arr, title) {
+    for (let i = 0; i < arr.length; i++) {
+        if (title == arr[i].title) {
+            if (arr[i].checkedOut) {
+            return `Status: Out on loan, ${arr[i].title} by ${arr[i].author};`
+            }
+            return `Status: Available, ${arr[i].title} by ${arr[i].author};`
+        }
+    }
+}
+
+function booksAvailability(arr) {
+    let countAvailable = 0;
+    let countUnavailable = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].checkedOut) {
+        countUnavailable ++
+    } else {
+        countAvailable ++
+    }
+    }
+    return `Number of available books: ${countAvailable}
+Number of Unavailable books: ${countUnavailable}`
+}
+
+function changeAvailability(arr, title, status) {
+
+    for (let i = 0; i < arr.length; i++) {
+        if (title == arr[i].title) {
+            if (status == true) {
+                arr[i].status = false
+            } else {
+                arr[i].status = true
+        }    
+     }      
+    }
+    
+}
+
+let userTitle = readline.question("Please enter the title of the book you are serching for: ")
+
+console.log(searchBook(library, userTitle))
+console.log(booksAvailability(library))
+console.log(changeAvailability(library, "Hyperion", true))
 
 
