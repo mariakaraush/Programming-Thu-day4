@@ -41,12 +41,28 @@
 let library = [
     {
     title: "Dragonflight",
-    author: "Anne Mccaffrey",
+    author: "Anne McCaffrey",
     checkedOut: true
 },
 {
     title: "Hyperion",
     author: "Dan Simmons",
     checkedOut: false
+},
+{
+    title: "The Road Ahead",
+    author: "Bill Gates",
+    checkedOut: true
 }
-]
+];
+
+for (let i = 0; i < library.length; i++) {
+    let book = `'${library[i].title}' by '${library[i].author}';`;
+    if (library[i].checkedOut) {
+        console.log("Out on loan: " + book);
+    } else {
+        console.log("On the shelf: " + book);
+    }
+}
+
+
