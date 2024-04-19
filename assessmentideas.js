@@ -23,7 +23,7 @@
   //     return "player1"
   //   } 
   //     return "player2"
-  // }
+  }
   }
 
 console.log(rockPaperScissors("scissors", "paper"))
